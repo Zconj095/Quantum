@@ -1,0 +1,36 @@
+[NEAT]
+fitness_criterion = max
+fitness_threshold = 3.0
+pop_size = 150
+reset_on_extinction = True
+
+[DefaultGenome]
+num_inputs = 10
+num_outputs = 2
+num_hidden = 0
+initial_connection = full_direct
+
+# Parameters for dynamic dimensionality
+dimensionality_expansion_rate = 0.1
+max_dimensions = 100  # Theoretical limit to manage computational resources
+
+[DefaultReproduction]
+elitism = 2
+survival_threshold = 0.2
+
+[DefaultSpeciesSet]
+compatibility_threshold = 3.0
+
+[DefaultStagnation]
+species_fitness_func = max
+max_stagnation = 15
+
+[DefaultMutation]
+# Mutation rates that might affect dimensionality
+mutate_connections_rate = 0.25
+mutate_add_node = 0.1
+mutate_add_connection = 0.1
+mutate_dimensionality = 0.05  # Chance to explore a new dimension
+
+[DefaultCrossover]
+enable_crossover = True
